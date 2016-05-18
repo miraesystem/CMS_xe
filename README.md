@@ -1,2 +1,15 @@
-# xe_biz1_responsive
-XE 기반의 반응형 회사홈페이지 레이아웃
+
+layouts 에 반응형스킨추가
+m.layouts 에 반응형스킨복사형 추가
+
+
+widgets/login_info/skins 에  "miraelogin" 스킨추가
+
+
+
+
+/modules/member/m.skins/default/login_form.html
+
+{getUrl('','act','dispMemberSignUpForm')} -> {getUrl('act','dispMemberSignUpForm')}
+
+현재페이지에서 액션실행하게 수정

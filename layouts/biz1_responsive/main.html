@@ -1,0 +1,265 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/layout.css" rel="stylesheet" type="text/css">
+<link href="css/index_layout.css" rel="stylesheet" type="text/css">
+<link href="css/swiper.css" rel="stylesheet" type="text/css">
+
+{Context::set("admin_bar", "false")} 
+
+<!--//레이아웃보고싶을때 사용하기-->
+<load target="css/global.css" />
+<load target="css/layout.css" />
+<load target="css/index_layout.css" />
+<load target="css/swiper.css" />
+<load target="js/swiper.jquery.min.js" />
+
+<div id="header">
+	<div class="wrapper">
+		<div id="logo"><a href="/"><img src="{$tpl_path}/images/logo.png"  /></a></div>
+		<div id="logoMobile"><a href="/"><img src="{$tpl_path}/images/logo_mobile.png"  /></a></div>
+		
+		<div id="topBtnMobile"><img src="{$tpl_path}/images/btn_m_menu.gif"  /></div>
+		<div id="topBtn">
+			<ul>
+			<li><a href="/">HOME</a></li>
+			<li><a href="/index.php?mid=community1" target="_blank">CONTACT US</a></li>
+			
+			
+			<li><img widget="login_info" skin="miraelogin" /></li>
+		
+			</ul>
+		</div>
+		
+		<div id="menu"> 
+		
+			<div class="homeArea">
+				<div class="btnHome"><a href="index.html"><img src="{$tpl_path}/images/btn_m_home.png" width="63"></a></div>
+				<div id="mobileNavClose"><img src="{$tpl_path}/images/btn_m_menu_close.png" width="26"></div>
+			</div>
+
+			<ul id="nav">
+				<li loop="$main_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']"><a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
+					<ul cond="$val1['list']">
+						<li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a></li>
+					</ul>
+					<div class="clear"></div>
+				</li>
+			</ul>
+			
+			<!--@if($is_logged)-->
+      <div class="bottomArea">
+				<span class="leftArea">
+				<a href="{getUrl('act','dispMemberLogout')}">로그아웃</a>
+				</span>
+				<span class="rightArea">
+				<a href="{getUrl('mid','member','act','dispMemberInfo')}">회원정보</a>
+				</span>
+			</div> 
+<!--@else-->
+      <div class="bottomArea">
+				<span class="leftArea">
+				<a href="{getUrl('mid','member','act','dispMemberLoginForm')}">로그인</a>
+				</span>
+				<span class="rightArea">
+				<a href="{getUrl('mid','member','act','dispMemberSignUpForm')}">회원가입</a>
+				</span>
+			</div> 
+<!--@end-->
+			
+			
+			
+			
+		</div>
+	</div>
+</div>
+
+
+
+<!-- PC홈페이지 화면 -->
+
+<div class="pcArea">
+
+
+
+<div class="visual">
+	<style>
+
+    .swiper-container2 {
+        width: 100%;
+        height: 300px;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+    }
+    </style>
+	<div class="swiper-container2">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" style="background-image:url(http://sav279.web25.kr/images/main_01.jpg)"></div>
+			<div class="swiper-slide" style="background-image:url(http://sav279.web25.kr/images/main_02.jpg)"></div>
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination swiper-pagination-white"></div>
+		<!-- Add Arrows -->
+		<div class="swiper-button-next swiper-button-white"></div>
+		<div class="swiper-button-prev swiper-button-white"></div>
+	</div>
+	
+	<!-- Initialize Swiper --> 
+	<script>
+    var swiper = new Swiper('.swiper-container2', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        effect: 'fade',
+		loop: true,
+		autoplay: 2500, 
+		autoplayDisableOnInteraction: false 
+
+    });
+    </script> 
+</div>
+<div class="contentWrap">
+	<div class="bbsNotice">
+		위젯영역
+	</div>
+	
+	<div class="bbsGallery" style="margin-left:20px;">
+		위젯영역2
+	</div>
+	<div class="bbsGallery" style="margin-left:20px;">
+		위젯영역3
+	</div>
+	
+</div>
+
+</div>
+
+
+<!-- 스마트폰 화면 -->
+
+
+<div class="mobileArea">
+<div class="visualMobile">
+
+    <style>
+
+    .swiper-container {
+        width: 100%;
+        height: 300px !important;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+    }
+    </style>
+
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(http://sav279.web25.kr/images/main_01.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(http://sav279.web25.kr/images/main_02.jpg)"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+			
+
+   
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper2 = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 0,
+        effect: 'slide',
+		loop: true,
+		autoplay: 2500, 
+		autoplayDisableOnInteraction: false 
+
+    });
+    
+    
+    
+    
+    </script>
+    
+    
+
+
+
+</div>
+<div>
+		모바일위젯영역
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="footer">
+	<div class="telMobile"><a href="tel:0000000000"><img src="images/tel_mobile.png" height="40"></a></div>
+	<div class="wrapper">
+		<div class="address"> 서울시 서초구 반포대로 300 (잠원동 덕성빌딩 6층)  가톨릭대학교 상담심리대학원 총동문회 <br>
+			대표 양준석  고유번호 114-82-65308   Tel. 010-8108-3903 <br>
+			Copyrigt 가톨릭대학교 상담심리대학원 총동문회 All rights reserved. </div>
+		<div class="logo"> <img src="images/logo_footer.png"></div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+    
+    
+    
+	if (jQuery(window).width() < 642)
+	{
+		
+		jQuery('#menu').height(jQuery('body').height());
+		jQuery('#topBtnMobile').click(function(){
+		    jQuery('#menu').toggle();
+		});
+		jQuery('#mobileNavClose').click(function(){
+		    jQuery('#menu').hide();
+		});
+		
+		
+	} else { 
+		jQuery('#nav li').hover(
+		
+			function () {
+				//show its submenu
+				jQuery('ul', this).slideDown(100);
+	
+			}, 
+			function () {
+				//hide its submenu
+				jQuery('ul', this).slideUp(100);			
+			}
+		);
+	}
+
+	
+
+	
+	
+
+	</script>

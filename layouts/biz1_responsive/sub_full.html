@@ -1,0 +1,104 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/layout.css" rel="stylesheet" type="text/css">
+<link href="css/sub_layout.css" rel="stylesheet" type="text/css">
+
+{Context::set("admin_bar", "false")} 
+
+<!--//레이아웃보고싶을때 사용하기-->
+
+<load target="css/global.css" />
+<load target="css/layout.css" />
+<load target="css/sub_layout.css" />
+
+
+
+<div id="header">
+		<!--#include("header.html")--> 
+</div>
+
+
+<div class="pcArea">
+
+<div class="visual" style="background-image:url(http://oyclean.co.kr/images/sub_01.jpg)"></div>
+
+</div>
+
+	
+<div class="mobileArea">
+
+<div class="visual" style="background-image:url(http://oyclean.co.kr/images/sub_01.jpg)"></div>
+
+</div>	
+
+
+
+<div id="container">
+		
+<!--snb -->
+		
+		
+<!--//snb -->
+
+
+
+
+<!--content -->
+		<div id="content" style="width:100%;">
+		
+			
+			
+			{$content}
+		</div>
+		
+<!--//content -->
+	
+	
+	
+	
+		
+
+	</div>
+
+
+<div id="footer">
+		<!--#include("footer.html")--> 
+	</div>
+	
+	<script type="text/javascript">
+    
+    
+    
+	if (jQuery(window).width() < 642)
+	{
+		
+		jQuery('#menu').height(jQuery('body').height());
+		jQuery('#topBtnMobile').click(function(){
+		    jQuery('#menu').toggle();
+		});
+		jQuery('#mobileNavClose').click(function(){
+		    jQuery('#menu').hide();
+		});
+		
+		
+	} else { 
+		jQuery('#nav li').hover(
+		
+			function () {
+				//show its submenu
+				jQuery('ul', this).slideDown(100);
+	
+			}, 
+			function () {
+				//hide its submenu
+				jQuery('ul', this).slideUp(100);			
+			}
+		);
+	}
+
+	
+
+	
+	
+
+	</script>

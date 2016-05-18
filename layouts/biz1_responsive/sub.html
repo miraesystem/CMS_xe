@@ -1,0 +1,135 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/layout.css" rel="stylesheet" type="text/css">
+<link href="css/sub_layout.css" rel="stylesheet" type="text/css">
+
+{Context::set("admin_bar", "false")} 
+
+<!--//레이아웃보고싶을때 사용하기-->
+
+<load target="css/global.css" />
+<load target="css/layout.css" />
+<load target="css/sub_layout.css" />
+
+
+
+<div id="header">
+		<!--#include("header.html")--> 
+</div>
+
+
+<div class="pcArea">
+
+<div class="visual" style="background-image:url(http://oyclean.co.kr/images/sub_01.jpg)"></div>
+
+</div>
+
+	
+<div class="mobileArea">
+
+<div class="visual" style="background-image:url(http://oyclean.co.kr/images/sub_01.jpg)"></div>
+
+</div>	
+
+
+
+<div id="container">
+		
+<!--snb -->
+		<div class="snb">
+			<div class="menu">
+			<span id="title"  loop="$main_menu->list=>$key1,$val1" cond="$val1['selected']">{$val1['link']}</span>
+			<ul id="sm" loop="$main_menu->list=>$key1,$val1" cond="$val1['selected'] && $val1['list']">
+			<li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']"><a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
+					<ul cond="$val2['list']">
+						<li loop="$val2['list']=>$key3,$val3" class="active"|cond="$val3['selected']"><a href="{$val3['href']}" target="_blank"|cond="$val3['open_window']=='Y'">{$val3['link']}</a></li>
+					</ul>
+				</li>
+	
+			</ul>
+			</div>
+		
+
+		   
+		    <!-- <div loop="$main_menu->list=>$val1" cond="$val1['selected']">
+            	<div cond="$val1['link']=='JS 소개'">
+                {$val1['link']}{$key1}
+                </div>
+            </div>-->
+			
+			<div class="banner" style="margin-top:25px;">
+			<img src="../images/tel.jpg">
+			</div>
+						
+		</div>
+		
+<!--//snb -->
+
+
+
+
+<!--content -->
+		<div id="content">
+		
+			<div class="titleArea">
+				<h1 id="subtitle">{$module_info->browser_title}<!--@if($module_info->sub_title)--> : <em>{$module_info->sub_title}</em><!--@end--></h1>
+				<div id="map">
+                HOME <span loop="$main_menu->list=>$key1,$val1" cond="$val1['selected']"> &gt;  {$val1['link']} <span loop="$val1['list']=>$key2,$val2" cond="$val2['selected']"> &gt;  {$val2['link']}  <span loop="$val2['list']=>$key3,$val3" cond="$val3['selected']"> &gt;  {$val3['link']}   </span></span></span> 
+                </div>
+			
+			   </div>
+			
+			{$content}
+		</div>
+		
+<!--//content -->
+	
+	
+	
+	
+		
+
+	</div>
+
+
+<div id="footer">
+		<!--#include("footer.html")--> 
+	</div>
+	
+	<script type="text/javascript">
+    
+    
+    
+	if (jQuery(window).width() < 642)
+	{
+		
+		jQuery('#menu').height(jQuery('body').height());
+		jQuery('#topBtnMobile').click(function(){
+		    jQuery('#menu').toggle();
+		});
+		jQuery('#mobileNavClose').click(function(){
+		    jQuery('#menu').hide();
+		});
+		
+		
+	} else { 
+		jQuery('#nav li').hover(
+		
+			function () {
+				//show its submenu
+				jQuery('ul', this).slideDown(100);
+	
+			}, 
+			function () {
+				//hide its submenu
+				jQuery('ul', this).slideUp(100);			
+			}
+		);
+	}
+
+	
+
+	
+	
+
+	</script>

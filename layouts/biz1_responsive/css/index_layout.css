@@ -1,0 +1,38 @@
+@charset "utf-8";
+body.bg { background: url(../images/bg_main2.jpg) top center repeat-x; }
+.visual { width: 100%; overflow: hidden; }
+.mobileArea { display: none; }
+
+.contentWrap { width: 1080px; overflow: hidden; margin: 35px auto 0; }
+.bbsNotice { float: left; width: 290px; }
+.bbsNotice > .title { border-bottom: 2px #3c3c3c solid; overflow: hidden; }
+#bbsTab { float: left; overflow: hidden; }
+#bbsTab li { border-top: 2px #bdbdbd solid; letter-spacing: -1px; margin-right: 5px; padding: 0 5px; color: #5d5d5d; font-size: 14px; line-height: 30px; float: left; overflow: hidden; font-family: '맑은 고딕'; font-weight: bold; cursor: pointer; }
+#bbsTab li.on { border-top: 2px #004592 solid; color: #004592; }
+.bbsMore { float: right; overflow: hidden; color: #5d5d5d; font-size: 11px; line-height: 30px; overflow: hidden; font-family: '맑은 고딕'; font-weight: bold; }
+.bbsGallery { float: left; width: 290px; }
+.bbsGallery > .title { float: left; width: 100%; }
+.bbsGallery > .contents { float: left; width: 100%; margin-top: 7px; overflow: hidden; }
+/*기본게시판*/
+.latestBBS li { line-height: 22px; height: 22px; overflow: hidden; background: url(../images/dot_title2.png) no-repeat 0 8px; }
+.latestBBS li .title { color: #2a2a2a; padding-left: 5px; overflow: hidden; }
+.latestBBS li img { display: none; }
+.latestBBS li .text { display: none; }
+.latestBBS li .date { display: none; }
+/*갤러리게시판*/
+.latestGallery li { width: 120px; float: left; margin: 10px 4px; }
+.latestGallery li .img img { width: 120px; height: 90px; }
+.latestGallery li .caption { width: 120px; height: 15px; margin-top: 5px; overflow: hidden; text-align: center }
+.productList { margin-top: 44px; overflow: hidden; }
+.productList li { float: left; margin-left: 12px; width: 112px; height: 99px; }
+.productList li:first-child { margin-left: 0px; }
+.productList li > img { margin: 0px; border: 1px #a1c0e9 solid; }
+.productList li > p { margin: 5px 0px 0px 0px; width: 112px; text-align: center; color: #3f6495; }
+
+
+ @media all and (max-width:640px) {
+.pcArea { display: none; }
+.mobileArea { display: block; }
+.visualMobile { width: 100%; overflow: hidden;   }
+
+}

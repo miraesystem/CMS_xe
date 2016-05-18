@@ -1,0 +1,66 @@
+@charset "utf-8";
+/*공통바디부분 시작*/
+
+#wrap { width:1080px; margin:0 auto; _text-align:left }
+#header { height: 100px; }
+#header > .wrapper { width:1080px; margin:0 auto; position:relative; }
+#header > .wrapper > #logo { position: absolute; top: 0px; left: 0px; }
+#header > .wrapper > #logoMobile { display:none; }
+#header > .wrapper > .homeArea { display:none; }
+#header > .wrapper > .bottomArea { display:none; }
+
+#header > .wrapper > #topBtnMobile { display:none; }
+#header > .wrapper > #topBtn { position:absolute; top:14px; right:0px; }
+#header > .wrapper > #topBtn li { float:left; margin-right:2px; border-left:1px #CCC solid; line-height:9px; padding:0 7px; }
+#header > .wrapper > #topBtn li:first-child { border-left:0; }
+#header > .wrapper > #topBtn li a { font-family: '맑은 고딕'; font-size:11px; line-height:11px; color:#666666; }
+#header > .wrapper > #menu { position:absolute; top:46px; left:200px; z-index:999; width: 880px; }
+#header > .wrapper > #menu > .homeArea { display:none; }
+#header > .wrapper > #menu >  .bottomArea { display:none; }
+
+
+#nav { margin:0; padding:0; list-style:none; }
+#nav > li { float:left; display:block; width:114px; position:relative; z-index:500; margin:0 1px; }
+#nav li a { display:block; padding:5px 0px 0 0px; font-weight:700; height:23px; text-decoration:none; font-family: '맑은 고딕'; font-weight:bold; font-size:15px; color:#212121; text-align:center; }
+#nav li a:hover { color:#0051b5; }
+#nav a.selected { color:#0051b5; }
+#nav ul { position:absolute; left:0; display:none; margin:0 0 0 -1px; padding:0; list-style:none; }
+#nav ul > li { width:163px; border-top:1px solid #fff; background-color:#eff4f7; }
+#nav ul li > a { display:block; padding:0 0 0 10px; ; width:128px; line-height:35px; height:35px; text-decoration:none; color:#333; text-align:left; font-size:12px; }
+
+
+
+#footer { width:100%; margin-top: 30px; border-top: 1px #e9e9e9 solid; }
+#footer .telMobile { display:none; }
+#footer >.wrapper { width:1080px; margin:0 auto; position:relative; }
+#footer >.wrapper >.address { float:left; margin :25px 0; font-family: '맑은 고딕'; font-size:11px; line-height:16px; color:#666666; }
+#footer >.wrapper >.logo { float:right; margin-top:25px; }
+
+
+
+ @media all and (max-width:640px) {
+#header { height: 25px; padding:20px 10px 20px 15px; }
+#header > .wrapper { width:100%; margin:0 auto; position: inherit; }
+#header > .wrapper > #logo { display:none; }
+#header > .wrapper > #logoMobile { display:block; float:left; }
+#header > .wrapper > #logoMobile img { height:25px; }
+#header > .wrapper > #topBtnMobile { display:block; float:right }
+#header > .wrapper > #topBtnMobile img { height:25px; }
+#header > .wrapper > #menu { display:none;position:absolute; top:0; left:0; z-index:999; width:200px;  background:#252525;}
+#nav > li { float:none; display:block;  position:relative; z-index:500; margin:0; width:200px;}
+#nav li a { display:block; padding:0 0px 0 25px; font-weight:bold; height:40px; line-height:40px; text-decoration:none; font-family: sans-serif;;  font-size:1em; color:#f6f6f6; text-align:left; background-repeat:no-repeat; background-image:url(../images/icon_plus.png) ; background-size:8px 8px; background-position:10px 15px; border-bottom:1px #444444 solid; }
+#nav li a:hover { color:#fff; }
+
+#header > .wrapper > #menu > .homeArea { display:block; height:50px;background:#111;}
+#header > .wrapper > #menu > .homeArea > .btnHome{ position:absolute; top:15px; left:15px;   }
+#header > .wrapper > #menu > .homeArea > #mobileNavClose{ position:absolute; top:12px; right:15px; }
+#header > .wrapper > #menu > .bottomArea { display:block; height:40px;background:#111; width:100%;}
+#header > .wrapper > #menu > .bottomArea > .leftArea > a{ display:inline-block; width:97px; text-align:center; font-weight:bold; height:40px; line-height:40px; text-decoration:none; font-family: sans-serif;;  font-size:1em; color:#CCC; border-right:1px #444444 solid; }
+#header > .wrapper > #menu > .bottomArea > .rightArea > a{ display:inline-block;  width:97px; text-align:center; font-weight:bold; height:40px; line-height:40px; text-decoration:none; font-family: sans-serif;;  font-size:1em; color:#CCC; }
+#header > .wrapper > #topBtn { display:none; }
+#footer .telMobile { display:block; text-align:center; background-color:#212121; }
+#footer { width:100%; margin-top: 15px; border-top: none; overflow:hidden; }
+#footer >.wrapper { width:100%; margin:0 auto; position:relative; }
+#footer >.wrapper >.address { float: none; margin :10px 0; text-align:center; font-family:sans-serif; font-size:0.8em; line-height:1.3em; color:#666666; }
+#footer >.wrapper >.logo { display:none; }
+}

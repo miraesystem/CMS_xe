@@ -30,7 +30,7 @@
 
 
 
-#footer { width:100%; margin-top: 30px; border-top: 1px #e9e9e9 solid; }
+#footer { width:100%; margin-top: 30px;overflow:hidden; border-top: 1px #e9e9e9 solid; }
 #footer .telMobile { display:none; }
 #footer >.wrapper { width:1080px; margin:0 auto; position:relative; }
 #footer >.wrapper >.address { float:left; margin :25px 0; font-family: '맑은 고딕'; font-size:11px; line-height:16px; color:#666666; }
@@ -39,12 +39,14 @@
 
 
  @media all and (max-width:640px) {
-#header { height: 25px; padding:20px 10px 20px 15px; }
+#header { height: 50px; padding:0 10px 0 10px; line-height:0; }
 #header > .wrapper { width:100%; margin:0 auto; position: inherit; }
+#header > .wrapper > .tel { display:none; }
+
 #header > .wrapper > #logo { display:none; }
 #header > .wrapper > #logoMobile { display:block; float:left; }
-#header > .wrapper > #logoMobile img { height:25px; }
-#header > .wrapper > #topBtnMobile { display:block; float:right }
+#header > .wrapper > #logoMobile img { height:50px; }
+#header > .wrapper > #topBtnMobile { display:block; float:right; margin-top:13px; }
 #header > .wrapper > #topBtnMobile img { height:25px; }
 #header > .wrapper > #menu { display:none;position:absolute; top:0; left:0; z-index:999; width:200px;  background:#252525;}
 #nav > li { float:none; display:block;  position:relative; z-index:500; margin:0; width:200px;}

@@ -12,6 +12,14 @@
 <load target="css/sub_layout.css" />
 
 
+<!--//mid xe변수를 php변수로 지정 저장-->
+<?
+$groupName = substr($__Context->mid, 0, 5);
+$__Context->groupName = $groupName;
+?> 
+
+
+
 
 <div id="header">
 		<!--#include("header.html")--> 
@@ -20,14 +28,14 @@
 
 <div class="pcArea">
 
-<div class="visual" style="background-image:url(http://oyclean.co.kr/images/sub_01.jpg)"></div>
+<div class="visual" style="background-image:url({$tpl_path}/images/sub_{$groupName}.jpg)"></div>
 
 </div>
 
 	
 <div class="mobileArea">
 
-<div class="visual" style="background-image:url(http://oyclean.co.kr/images/sub_01.jpg)"></div>
+<div class="visual" style="background-image:url({$tpl_path}/images/sub_{$groupName}.jpg)"></div>
 
 </div>	
 
@@ -57,8 +65,8 @@
                 </div>
             </div>-->
 			
-			<div class="banner" style="margin-top:25px;">
-			<img src="../images/tel.jpg">
+			<div class="banner" style="margin-top:20px;">
+			<img src="images/tel_sub.png">
 			</div>
 						
 		</div>
@@ -71,7 +79,7 @@
 <!--content -->
 		<div id="content">
 		
-			<div class="titleArea">
+			<div class="titleArea" style="background-image:url({$tpl_path}/images/title_bg_{$groupName}.jpg)">
 				<h1 id="subtitle">{$module_info->browser_title}<!--@if($module_info->sub_title)--> : <em>{$module_info->sub_title}</em><!--@end--></h1>
 				<div id="map">
                 HOME <span loop="$main_menu->list=>$key1,$val1" cond="$val1['selected']"> &gt;  {$val1['link']} <span loop="$val1['list']=>$key2,$val2" cond="$val2['selected']"> &gt;  {$val2['link']}  <span loop="$val2['list']=>$key3,$val3" cond="$val3['selected']"> &gt;  {$val3['link']}   </span></span></span> 
